@@ -1,0 +1,11 @@
+import time
+from selenium.webdriver.firefox.options import Options
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
+
+
+
+options = Options()
+
+driver = webdriver.Firefox(options)
+driver.get("https://ya.ru")
