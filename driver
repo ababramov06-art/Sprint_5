@@ -1,13 +1,11 @@
 import time
-from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
-from selenium.webdriver.firefox.service import Service
-
-
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options 
 
 options = Options()
 
-driver = webdriver.Firefox(options)
-driver.get("https://ya.ru")
+driver = webdriver.Chrome(options)
+driver.get("https://stellarburgers.education-services.ru")
 time.sleep(100)
 driver.quit()
