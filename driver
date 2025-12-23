@@ -6,6 +6,6 @@ from selenium.webdriver.chrome.options import Options
 options = Options()
 
 driver = webdriver.Chrome(options)
-driver.get("https://stellarburgers.education-services.ru")
+driver.get('https://stellarburgers.education-services.ru/')
 time.sleep(100)
 driver.quit()

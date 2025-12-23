@@ -1,0 +1,7 @@
+class TestRegistration:
+    def test_successful_registration(self, driver):
+        return
+
+    def test_unsuccessful_registration(self, driver):
+        return
+    
