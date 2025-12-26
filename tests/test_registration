@@ -1,5 +1,8 @@
+from selenium.webdriver.common.by import By
+
 class TestRegistration:
     def test_successful_registration(self, driver):
+        driver.find_element(By.XPATH, FORM_LOGO).click() # Жмём логотип формы. 
         return
 
     def test_unsuccessful_registration(self, driver):
