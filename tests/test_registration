@@ -1,9 +1,13 @@
 from selenium.webdriver.common.by import By
+from locators import Locators
+import time
 
 class TestRegistration:
     def test_successful_registration(self, driver):
-        driver.find_element(By.XPATH, FORM_LOGO).click() # Жмём логотип формы. 
-        return
+        driver.find_element(*Locators.FORM_LOGO).click() # Жмём логотип формы. 
+        print('На какой я форме?')
+        time.sleep(100)
+        assert 1 == 1
 
     def test_unsuccessful_registration(self, driver):
         return
