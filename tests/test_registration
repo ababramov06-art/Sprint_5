@@ -4,11 +4,11 @@ import time
 
 class TestRegistration:
     def test_successful_registration(self, driver):
-        driver.find_element(*Locators.FORM_LOGO).click() # Жмём логотип формы. 
-        print('На какой я форме?')
-        time.sleep(100)
+        driver.find_element(*Locators.BUTTON_REG).click() # На форме входа нажимаем кнопку "Зарегистрироваться".
+
+        time.sleep(30)
         assert 1 == 1
 
     def test_unsuccessful_registration(self, driver):
-        return
+        assert 1 == 1
     

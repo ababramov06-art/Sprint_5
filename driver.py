@@ -13,13 +13,17 @@ driver.find_element(*Locators.BUTTON_LOG_IN_TO_YOUR_ACCOUNT).click() # Нажи�
 driver.find_element(*Locators.BUTTON_REG).click() # На форме входа нажимаем кнопку "Зарегистрироваться".
 
 # Заполняем поля формы регистрации.
-#driver.find_element(*Locators.NAME_EDIT).clear()
-driver.find_element(By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[1]/div/div/input").send_keys('Aleksandr')
-#driver.find_element(By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input").clear()
-driver.find_element(By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input").send_keys('37_Aleksandr_1969@yandex.ru')
-#driver.find_element(By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[3]/div/div/input").clear()
-driver.find_element(By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[3]/div/div/input").send_keys('gfhjkm')
-driver.find_element(By.XPATH, "//*[@id='root']/div/main/div/form/button").click()
+driver.find_element(*Locators.NAME_EDIT).clear()
+driver.find_element(*Locators.NAME_EDIT).send_keys('Aleksandr')
+
+driver.find_element(By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input").clear()
+driver.find_element(*Locators.EMAIL_EDIT).send_keys('37_Aleksandr_3@yandex.ru')
+
+driver.find_element(By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[3]/div/div/input").clear()
+driver.find_element(*Locators.PASSWORD_EDIT).send_keys('gfhjkm')
+
+# Нажимаем кнопку "Зарегистрироваться."
+driver.find_element(*Locators.BUTTON_REGISTER).click()
 
 #driver.find_element(By.XPATH, "//*[@id='root']/div/header/nav/div/a/svg").click() # Жмём логотип формы. 
 

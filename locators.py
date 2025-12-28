@@ -22,6 +22,4 @@ class Locators:
     PASSWORD_EDIT = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[3]/div/div/input") 
 
 # Кнопка зарегистрироваться на форме регистрации.
-    BUTTON_REGISTER = (By.XPATH, "//form[contains(@action, 'register')]//button["
-        "  contains(@class, 'submit') or text()='Отправить'"
-        "]")    
+    BUTTON_REGISTER = (By.XPATH, "//*[@id='root']/div/main/div/form/button")    
