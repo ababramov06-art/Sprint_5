@@ -23,3 +23,6 @@ class Locators:
 
 # Кнопка зарегистрироваться на форме регистрации.
     BUTTON_REGISTER = (By.XPATH, "//*[@id='root']/div/main/div/form/button")    
+
+# Сообщение об ошибке пароля.
+    WRONG_PASS_MESSAGE_LOCATOR = (By.XPATH, "//p[contains(text(), 'Некорректный пароль')]")

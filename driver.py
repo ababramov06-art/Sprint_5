@@ -16,16 +16,15 @@ driver.find_element(*Locators.BUTTON_REG).click() # На форме входа �
 driver.find_element(*Locators.NAME_EDIT).clear()
 driver.find_element(*Locators.NAME_EDIT).send_keys('Aleksandr')
 
-driver.find_element(By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input").clear()
-driver.find_element(*Locators.EMAIL_EDIT).send_keys('37_Aleksandr_3@yandex.ru')
+driver.find_element(*Locators.EMAIL_EDIT).clear()
+driver.find_element(*Locators.EMAIL_EDIT).send_keys('37_Aleksandr_7@yandex.ru')
 
-driver.find_element(By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[3]/div/div/input").clear()
+driver.find_element(*Locators.PASSWORD_EDIT).clear()
 driver.find_element(*Locators.PASSWORD_EDIT).send_keys('gfhjkm')
 
 # Нажимаем кнопку "Зарегистрироваться."
 driver.find_element(*Locators.BUTTON_REGISTER).click()
 
-#driver.find_element(By.XPATH, "//*[@id='root']/div/header/nav/div/a/svg").click() # Жмём логотип формы. 
+time.sleep(10)
 
-time.sleep(30)
 driver.quit()
