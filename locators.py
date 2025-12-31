@@ -16,13 +16,29 @@ class Locators:
     NAME_EDIT = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[1]/div/div/input")
 
 # Поле редактирования почтового адреса на форме регистрации.
-    EMAIL_EDIT = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input")
-
+    EMAIL_EDIT =       (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input")
+    EMAIL_EDIT_LOGIN = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[1]/div/div/input")
 # Поле редактирования пароля на форме регистрации.
-    PASSWORD_EDIT = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[3]/div/div/input") 
-
+    PASSWORD_EDIT =       (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[3]/div/div/input") 
+    PASSWORD_EDIT_LOGIN = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input")
+    
 # Кнопка зарегистрироваться на форме регистрации.
     BUTTON_REGISTER = (By.XPATH, "//*[@id='root']/div/main/div/form/button")    
 
 # Сообщение об ошибке пароля.
     WRONG_PASS_MESSAGE_LOCATOR = (By.XPATH, "//p[contains(text(), 'Некорректный пароль')]")
+
+# Кнопка "Личный кабинет."
+    PERSONAL_ACCOUNT_BUTTON_LOCATOR = (By.XPATH, "//*[@id='root']/div/header/nav/a/p")
+
+# Кнопка "Восстановить пароль" на странице входа.
+    RECOVER_THE_PASSWORD = (By.XPATH, "//*[@id='root']/div/main/div/div/p[2]/a")
+
+# Кнопка "Логин" на странице восстановления пароля.
+    LOGIN_IN_RECOVER = (By.XPATH, "//*[@id='root']/div/main/div/div/p/a")
+
+# Кнопка "Войти" на странице входа в аккаунт.
+    LOGIN_ENTER = (By.XPATH, "//*[@id='root']/div/main/div/form/button")
+
+# Кнопка "Оформить заказ" на главной форме.
+    PLACE_AN_ORDER = (By.XPATH, "//*[@id='root']/div/main/section[2]/div/button")
