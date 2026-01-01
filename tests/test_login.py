@@ -26,17 +26,18 @@ class Test_login():
         driver.find_element(*Locators.BUTTON_REGISTER).click()
         # Ожидаем, что перешли на форму входа.
         time.sleep(1)
+        # Заполняем форму входа в аккаунт.
         driver.find_element(*Locators.EMAIL_EDIT_LOGIN).clear()
         driver.find_element(*Locators.EMAIL_EDIT_LOGIN).send_keys(login_and_password_generator["login"])
-
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).clear()
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).send_keys(login_and_password_generator["password"])
         driver.find_element(*Locators.LOGIN_ENTER).click()
-        time.sleep(1)
-        assert 1==1
+        # Ожидаем переход на главную форму.
+        wait = WebDriverWait(driver, 10)
+        element = wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
+        assert 'Оформить заказ'== element.text
         driver.quit()
-        #assert 'Оформить заказ'== driver.find_element(*Locators.PLACE_AN_ORDER).text
-
+        
     # Вход через кнопку "Личный кабинет".
     def test_login_through_the_personal_account_button(self, driver, login_and_password_generator):
         assert 1==1
