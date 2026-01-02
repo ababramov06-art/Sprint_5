@@ -18,6 +18,7 @@ class Locators:
 # Поле редактирования почтового адреса на форме регистрации.
     EMAIL_EDIT =       (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input")
     EMAIL_EDIT_LOGIN = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[1]/div/div/input")
+    
 # Поле редактирования пароля на форме регистрации.
     PASSWORD_EDIT =       (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[3]/div/div/input") 
     PASSWORD_EDIT_LOGIN = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input")
@@ -39,6 +40,18 @@ class Locators:
 
 # Кнопка "Войти" на странице входа в аккаунт.
     LOGIN_ENTER = (By.XPATH, "//*[@id='root']/div/main/div/form/button")
-
+                            
 # Кнопка "Оформить заказ" на главной форме.
     PLACE_AN_ORDER = (By.XPATH, "//*[@id='root']/div/main/section[2]/div/button")
+
+# Кнопка "Войти" после регистрации.
+    BUTTON_IN_AFTER_REG = (By.XPATH, "//*[@id='root']/div/main/div/form/button")
+
+# Кнопка "Личный кабинет".
+    BUTTON_PERSONAL_ACCOUNT = (By.XPATH, "//*[@id='root']/div/header/nav/a/p")
+
+# Надпись в личном кабинете.
+    LABLE_PERSONAL_ACCOUNT = (By.XPATH, "//*[@id='root']/div/main/div/nav/p")
+
+# Кнопка "Выход" личного кабинета.
+    BUTTON_OUT_PERSONAL_ACCOUNT = (By.XPATH, "//*[@id='root']/div/main/div/nav/ul/li[3]/button")
