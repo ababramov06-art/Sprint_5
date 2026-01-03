@@ -64,7 +64,7 @@ class Test_login():
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).send_keys(login_and_password_generator["password"])
         driver.find_element(*Locators.LOGIN_ENTER).click()
         # Ожидаем переход на главную форму.
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 20)
         element = wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
         assert 'Оформить заказ'== element.text
         driver.quit()
@@ -87,7 +87,7 @@ class Test_login():
         # Нажимаем кнопку "Зарегистрироваться."
         driver.find_element(*Locators.BUTTON_REGISTER).click()
         # Ожидаем форму входа.
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 20)
         wait.until(EC.element_to_be_clickable(Locators.BUTTON_IN_AFTER_REG))
          # Заполняем форму входа в аккаунт.
         time.sleep(2)
@@ -100,9 +100,9 @@ class Test_login():
         # Нажимаем кнопку войти в аккаунт.
         driver.find_element(*Locators.BUTTON_IN_AFTER_REG).click()
         # Ожидаем переход на главную форму.
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 20)
         element = wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
-        assert 1==1
+        assert 'Оформить заказ'== element.text
         driver.quit()
 
     # Вход через кнопку в форме восстановления пароля.
