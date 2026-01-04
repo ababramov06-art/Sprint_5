@@ -102,11 +102,7 @@ class Test_login():
         # Ожидаем переход на главную форму.
         wait = WebDriverWait(driver, 20)
         element = wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
-<<<<<<< HEAD
         assert "Оформить заказ"== element.text
-=======
-        assert 'Оформить заказ'== element.text
->>>>>>> 6102beeb01e1fa922e36377c8e434e4db77546b0
         driver.quit()
 
     # Вход через кнопку в форме восстановления пароля.
