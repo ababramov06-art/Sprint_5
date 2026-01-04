@@ -55,3 +55,6 @@ class Locators:
 
 # Кнопка "Выход" личного кабинета.
     BUTTON_OUT_PERSONAL_ACCOUNT = (By.XPATH, "//*[@id='root']/div/main/div/nav/ul/li[3]/button")
+
+# Кнопка "Вспомнили пароль? Войти"
+    BUTTON_REM_PASS_IN = (By.XPATH, "//*[@id='root']/div/main/div/div/p/a")

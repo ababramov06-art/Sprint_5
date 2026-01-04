@@ -21,7 +21,8 @@ class TestRegistration:
         
         # Нажимаем кнопку "Зарегистрироваться."
         driver.find_element(*Locators.BUTTON_REGISTER).click()
-        time.sleep(2)
+        # Ожидаем форму входа.
+        time.sleep(5)
         current_url = driver.current_url
         expected_url = Test_url.page_LOG_IN_TO_YOUR_ACCOUNT
 
