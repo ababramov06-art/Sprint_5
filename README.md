@@ -9,3 +9,22 @@ test_login.py           - тестирование входа зарегистр
     test_login_through_the_personal_account_button() - вход через кнопку "Личный кабинет. 
     test_login_via_the_button_in_the_registration_form() - вход через кнопку в форме регистрации.
     test_login_through_the_button_in_the_password_recovery_form() - вход через кнопку в форме восстановления пароля.
+test_transfer_to_your_personal_account.py - тестирование перехода в личный кабинет.
+    test_transfer_to_your_personal_account()
+test_switching_from_your_personal_account_to_the_constructor.py - тестирование перехода из личного кабинета.
+    test_switching_from_your_personal_account_click_to_the_constructor() - тестирование перехода по клику на "Конструктор".
+    test_switching_from_your_personal_account_click_to_logo_Stellar_Burgers() - тестирование перехода по кликуу на логотип "Stellar Burgers".
+test_log_out_of_your_account.py - тестирование выхода из аккаунта.
+    test_log_out_of_your_account() - тестирование выхода из аккаунта по кнопке "Выйти" в личном кабинете.
+test_constructor.py - тестирование раздела "Конструктор".
+    test_rolls() - тестирование перехода в раздел "Булки".
+    test_sauces() - тестирование перехода в раздел "Соусы".
+    test_toppings() - тестирование перехода в раздел "Начинки".
+
+
+
+
+
+
+
+

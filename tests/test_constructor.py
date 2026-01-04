@@ -1,9 +1,10 @@
 class Test_constructor():
+    # Булки.
     def test_rolls(self):
         assert 1==1
-
+    # Соусы.
     def test_sauces(self):
         assert 1==1
-
+    # Начинки.
     def test_toppings(self):
         assert 1==1

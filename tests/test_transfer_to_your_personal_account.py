@@ -36,6 +36,6 @@ class Test_transfer_to_your_personal_account():
         wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
         driver.find_element(*Locators.BUTTON_PERSONAL_ACCOUNT).click()
         wait = WebDriverWait(driver, 10)
-        wait.until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT))
-        
+        wait.until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT)).click()
+        time.sleep(3)        
         assert Test_url.page_personal_account == driver.current_url
