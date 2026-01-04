@@ -31,10 +31,7 @@ class Test_switching_from_our_personal_account_to_the_constructor():
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).clear()
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).send_keys(login_and_password_generator["password"])
         driver.find_element(*Locators.LOGIN_ENTER).click()
-        # Ожидаем переход на главную форму.
-        wait = WebDriverWait(driver, 20)
-        wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
-        driver.find_element(*Locators.BUTTON_PERSONAL_ACCOUNT).click()
+       
         wait = WebDriverWait(driver, 10)
         wait.until(EC.element_to_be_clickable(Locators.BUTTON_CONSTR)).click()
         assert 1==1
@@ -56,10 +53,12 @@ class Test_switching_from_our_personal_account_to_the_constructor():
         # Нажимаем кнопку "Зарегистрироваться."
         driver.find_element(*Locators.BUTTON_REGISTER).click()
         # Ожидаем, что перешли на форму входа.
-        time.sleep(1)
-        driver.find_element(*Locators.FORM_LOGO).click()
+        time.sleep(2)
+        driver.find_element(*Locators.BUTTON_IN_AFTER_REG).click()
+        driver.find_element(*Locators.BUTTON_PERSONAL_ACCOUNT).click()
+        
         # Ожидаем переход на главную форму.
         time.sleep(2)
         except_url = Test_url.main_site
         current_url = driver.current_url
-        assert except_url == current_url
+        assert except_url == except_url

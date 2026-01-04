@@ -64,7 +64,7 @@ class Test_login():
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).send_keys(login_and_password_generator["password"])
         driver.find_element(*Locators.LOGIN_ENTER).click()
         # Ожидаем переход на главную форму.
-        wait = WebDriverWait(driver, 20)
+        wait = WebDriverWait(driver, 10)
         element = wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
         assert 'Оформить заказ'== element.text
         driver.quit()

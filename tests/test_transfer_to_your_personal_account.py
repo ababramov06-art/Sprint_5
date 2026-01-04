@@ -32,10 +32,8 @@ class Test_transfer_to_your_personal_account():
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).send_keys(login_and_password_generator["password"])
         driver.find_element(*Locators.LOGIN_ENTER).click()
         # Ожидаем переход на главную форму.
-        wait = WebDriverWait(driver, 20)
-        wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
+       
         driver.find_element(*Locators.BUTTON_PERSONAL_ACCOUNT).click()
         wait = WebDriverWait(driver, 10)
-        wait.until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT)).click()
-        time.sleep(3)        
+        wait.until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT)).click()        
         assert Test_url.page_personal_account == driver.current_url

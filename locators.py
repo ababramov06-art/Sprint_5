@@ -6,6 +6,9 @@ class Locators:
 # Логотип главной формы.
     FORM_LOGO = (By.XPATH, "//*[@id='root']/div/header/nav/div/a/svg")
 
+# Кнопка "Сделать заказ".
+    BUTTON_IN_ORDER = (By.XPATH, "//*[@id='root']/div/main/section[2]/div/button")
+
 # Кнопка "Конструктор".
     BUTTON_CONSTR = (By.XPATH, "//*[@id='root']/div/header/nav/ul/li[1]/a/p")
 
