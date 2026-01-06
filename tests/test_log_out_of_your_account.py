@@ -2,11 +2,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from locators import Locators
 from curl import Test_url
+from helpers import login_and_password_generator
 import time
 class Test_log_out_of_your_account():
     # проверка выхода из личного аккаута.
-    def test_log_out_of_your_account(self, driver, login_and_password_generator):
-        mail, password = login_and_password_generator
+    def test_log_out_of_your_account(self, driver):
+        mail = login_and_password_generator()["login"]
+        password = login_and_password_generator()["password"]
+        
         driver.find_element(*Locators.BUTTON_LOG_IN_TO_YOUR_ACCOUNT).click() # Нажимаем кнопку "Войти в аккаунт".
         driver.find_element(*Locators.BUTTON_REG).click() # На форме входа нажимаем кнопку "Зарегистрироваться".
         # Заполняем поля формы регистрации.
