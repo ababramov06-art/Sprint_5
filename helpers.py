@@ -1,3 +1,7 @@
+import uuid
+import random
+import string
+
 # Функция генерации уникальных логина и пароля.
 def login_and_password_generator():
    
@@ -9,5 +13,5 @@ def login_and_password_generator():
     chars = string.ascii_letters + string.digits
     password = ''.join(random.choices(chars, k=6))
     password += random.choice("!@#") + random.choice("$%&")
-   
+      
     return {"login": login, "password": password}

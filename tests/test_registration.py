@@ -3,34 +3,39 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from locators import Locators
 import time
+from helpers import login_and_password_generator
+
 from curl import Test_url
 
 class TestRegistration:
-    def test_successful_registration(self, driver, login_and_password_generator):
+    def test_successful_registration(self, driver):
+        expected_url = Test_url.page_LOG_IN_TO_YOUR_ACCOUNT
+        login = login_and_password_generator()["login"]
+        password = login_and_password_generator()["password"]
         driver.find_element(*Locators.BUTTON_LOG_IN_TO_YOUR_ACCOUNT).click() # Нажимаем кнопку "Войти в аккаунт".
         driver.find_element(*Locators.BUTTON_REG).click() # На форме входа нажимаем кнопку "Зарегистрироваться".
+       
         # Заполняем поля формы регистрации.
         driver.find_element(*Locators.NAME_EDIT).clear()
         driver.find_element(*Locators.NAME_EDIT).send_keys('Aleksandr')
 
         driver.find_element(*Locators.EMAIL_EDIT).clear()
-        driver.find_element(*Locators.EMAIL_EDIT).send_keys(login_and_password_generator["login"])
+        driver.find_element(*Locators.EMAIL_EDIT).send_keys(login)
 
         driver.find_element(*Locators.PASSWORD_EDIT).clear()
-        driver.find_element(*Locators.PASSWORD_EDIT).send_keys(login_and_password_generator["password"])
-        
+        driver.find_element(*Locators.PASSWORD_EDIT).send_keys(password)
         # Нажимаем кнопку "Зарегистрироваться."
         driver.find_element(*Locators.BUTTON_REGISTER).click()
         # Ожидаем форму входа.
-        time.sleep(5)
+        wait = WebDriverWait(driver, 50)
+        wait.until(EC.url_to_be(expected_url))
         current_url = driver.current_url
-        expected_url = Test_url.page_LOG_IN_TO_YOUR_ACCOUNT
-
         assert expected_url == current_url
      
        
 
-    def test_unsuccessful_registration(self, driver, login_and_password_generator):
+    def test_unsuccessful_registration(self, driver):
+        login = login_and_password_generator()["login"]
         driver.find_element(*Locators.BUTTON_LOG_IN_TO_YOUR_ACCOUNT).click() # Нажимаем кнопку "Войти в аккаунт".
         driver.find_element(*Locators.BUTTON_REG).click() # На форме входа нажимаем кнопку "Зарегистрироваться".
         # Заполняем поля формы регистрации.
@@ -38,7 +43,7 @@ class TestRegistration:
         driver.find_element(*Locators.NAME_EDIT).send_keys('Aleksandr')
 
         driver.find_element(*Locators.EMAIL_EDIT).clear()
-        driver.find_element(*Locators.EMAIL_EDIT).send_keys(login_and_password_generator["login"])
+        driver.find_element(*Locators.EMAIL_EDIT).send_keys(login)
 
         driver.find_element(*Locators.PASSWORD_EDIT).clear()
         driver.find_element(*Locators.PASSWORD_EDIT).send_keys("123")
