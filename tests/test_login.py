@@ -36,8 +36,7 @@ class Test_login():
         wait = WebDriverWait(driver, 10)
         element = wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
         assert 'Оформить заказ'== element.text
-        driver.quit()
-        
+            
     # Вход через кнопку "Личный кабинет".
     def test_login_through_the_personal_account_button(self, driver, login_and_password_generator):
         mail, password = login_and_password_generator
@@ -67,8 +66,7 @@ class Test_login():
         wait = WebDriverWait(driver, 10)
         element = wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
         assert 'Оформить заказ'== element.text
-        driver.quit()
-
+      
     # Вход через кнопку в форме регистрации.
     def test_login_via_the_button_in_the_registration_form(self, driver, login_and_password_generator):
         driver.find_element(*Locators.BUTTON_LOG_IN_TO_YOUR_ACCOUNT).click() # Нажимаем кнопку "Войти в аккаунт".
@@ -103,8 +101,7 @@ class Test_login():
         wait = WebDriverWait(driver, 20)
         element = wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
         assert "Оформить заказ"== element.text
-        driver.quit()
-
+      
     # Вход через кнопку в форме восстановления пароля.
     def test_login_through_the_button_in_the_password_recovery_form(self, driver, login_and_password_generator):
         # Зарегистрироваться.
@@ -147,4 +144,4 @@ class Test_login():
         wait = WebDriverWait(driver, 10)
         element = wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
         assert "Оформить заказ"== element.text
-        driver.quit()
+      

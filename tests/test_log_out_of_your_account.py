@@ -31,4 +31,4 @@ class Test_log_out_of_your_account():
         current_url = driver.current_url
         expected_url = Test_url.page_LOG_IN_TO_YOUR_ACCOUNT
         assert expected_url == current_url
-        driver.quit()
+       

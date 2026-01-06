@@ -27,7 +27,7 @@ class TestRegistration:
         expected_url = Test_url.page_LOG_IN_TO_YOUR_ACCOUNT
 
         assert expected_url == current_url
-        driver.quit()
+     
        
 
     def test_unsuccessful_registration(self, driver, login_and_password_generator):
@@ -48,4 +48,4 @@ class TestRegistration:
         error_message = WebDriverWait(driver, 5).until(EC.visibility_of_element_located(Locators.WRONG_PASS_MESSAGE_LOCATOR)).text
 
         assert 'Некорректный пароль' == error_message
-        driver.quit()
+   
