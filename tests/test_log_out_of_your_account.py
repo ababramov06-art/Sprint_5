@@ -29,9 +29,10 @@ class Test_log_out_of_your_account():
         wait = WebDriverWait(driver, 20)
         wait.until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT)).click()
         # Ожидаем форму личного кабинета.
-        time.sleep(3)
+        wait = WebDriverWait(driver, 10)
+        wait.until(EC.element_to_be_clickable(Locators.BUTTON_REG))
         # Проверяем форму личного кабинета.
         current_url = driver.current_url
-        expected_url = Test_url.page_LOG_IN_TO_YOUR_ACCOUNT
+        expected_url = Test_url.page_log_in_to_your_account
         assert expected_url == current_url
        

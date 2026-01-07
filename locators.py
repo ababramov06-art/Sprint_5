@@ -4,7 +4,7 @@ class Locators:
 #заголовок страницы
 
 # Логотип главной формы.
-    FORM_LOGO = (By.XPATH, "//*[@id='root']/div/header/nav/div/a/svg")
+    FORM_LOGO = (By.XPATH, "//*[@id='root']/div/header/nav/ul/li[1]/a/p")
 
 # Кнопка зарегистрироваться на форме регистрации.
     BUTTON_REGISTER = (By.XPATH, "//*[@id='root']/div/main/div/form/button")    
@@ -22,7 +22,8 @@ class Locators:
     BUTTON_LOG_IN_TO_YOUR_ACCOUNT = (By.XPATH, "//*[@id='root']/div/main/section[2]/div/button")
 
 # Кнопка зарегистрироваться на форме входа в аккаунт.
-    BUTTON_REG = (By.XPATH, "//a[text()='Зарегистрироваться']")         
+    BUTTON_REG = (By.XPATH, "//a[text()='Зарегистрироваться']")  
+       
 
 # Поле редактирования имени на форме регистрации.
     NAME_EDIT = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[1]/div/div/input")

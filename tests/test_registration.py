@@ -9,7 +9,7 @@ from curl import Test_url
 
 class TestRegistration:
     def test_successful_registration(self, driver):
-        expected_url = Test_url.page_LOG_IN_TO_YOUR_ACCOUNT
+        expected_url = Test_url.page_log_in_to_your_account
         login = login_and_password_generator()["login"]
         password = login_and_password_generator()["password"]
         driver.find_element(*Locators.BUTTON_LOG_IN_TO_YOUR_ACCOUNT).click() # Нажимаем кнопку "Войти в аккаунт".
@@ -25,9 +25,11 @@ class TestRegistration:
         driver.find_element(*Locators.PASSWORD_EDIT).clear()
         driver.find_element(*Locators.PASSWORD_EDIT).send_keys(password)
         # Нажимаем кнопку "Зарегистрироваться."
-        driver.find_element(*Locators.BUTTON_REGISTER).click()
+       #driver.find_element(*Locators.BUTTON_REGISTER).click()
+        wait = WebDriverWait(driver, 10)
+        element = wait.until(EC.element_to_be_clickable(Locators.BUTTON_REGISTER)).click()
         # Ожидаем форму входа.
-        wait = WebDriverWait(driver, 50)
+        wait = WebDriverWait(driver, 10)
         wait.until(EC.url_to_be(expected_url))
         current_url = driver.current_url
         assert expected_url == current_url

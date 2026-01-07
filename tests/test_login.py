@@ -28,14 +28,17 @@ class Test_login():
         driver.find_element(*Locators.BUTTON_REGISTER).click()
         # Ожидаем, что перешли на форму входа.
         wait = WebDriverWait(driver, 10)
-        element = wait.until(EC.element_to_be_clickable(Locators.LOGIN_ENTER))
+        element = wait.until(EC.element_to_be_clickable(Locators.EMAIL_EDIT_LOGIN))
+        time.sleep(2)
         # Заполняем форму входа в аккаунт.
         #driver.find_element(*Locators.EMAIL_EDIT_LOGIN).clear()
         driver.find_element(*Locators.EMAIL_EDIT_LOGIN).send_keys(login)
         #driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).clear()
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).send_keys(password)
-        driver.find_element(*Locators.LOGIN_ENTER).click()
-        # Ожидаем переход на главную форму.
+        #driver.find_element(*Locators.LOGIN_ENTER).click()
+        wait = WebDriverWait(driver, 10)
+        element = wait.until(EC.element_to_be_clickable(Locators.LOGIN_ENTER)).click()
+        #Ожидаем переход на главную форму.
         wait = WebDriverWait(driver, 10)
         element = wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
         assert 'Оформить заказ'== element.text

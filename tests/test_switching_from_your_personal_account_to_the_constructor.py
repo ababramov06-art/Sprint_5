@@ -36,7 +36,9 @@ class Test_switching_from_our_personal_account_to_the_constructor():
        
         wait = WebDriverWait(driver, 10)
         wait.until(EC.element_to_be_clickable(Locators.BUTTON_CONSTR)).click()
-        assert 1==1
+        except_url = Test_url.main_site
+        current_url = driver.current_url
+        assert except_url == current_url
     
     def test_switching_from_your_personal_account_click_to_logo_Stellar_Burgers(self, driver):
         login = login_and_password_generator()["login"]
@@ -56,12 +58,15 @@ class Test_switching_from_our_personal_account_to_the_constructor():
         # Нажимаем кнопку "Зарегистрироваться."
         driver.find_element(*Locators.BUTTON_REGISTER).click()
         # Ожидаем, что перешли на форму входа.
-        time.sleep(2)
-        driver.find_element(*Locators.BUTTON_IN_AFTER_REG).click()
-        driver.find_element(*Locators.BUTTON_PERSONAL_ACCOUNT).click()
-        
+        wait = WebDriverWait(driver, 10)
+        wait.until(EC.element_to_be_clickable(Locators.BUTTON_IN_AFTER_REG)).click()
+        # Жмём логотип формы.
+        wait = WebDriverWait(driver, 10)
+        wait.until(EC.element_to_be_clickable(Locators.FORM_LOGO)).click()              
         # Ожидаем переход на главную форму.
-        time.sleep(2)
+        wait = WebDriverWait(driver, 10)
+        wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
+        
         except_url = Test_url.main_site
         current_url = driver.current_url
-        assert except_url == except_url
+        assert except_url == current_url
