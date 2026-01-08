@@ -2,6 +2,9 @@ import pytest
 import uuid
 import random
 import string
+import time
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options 
@@ -10,7 +13,7 @@ from locators import Locators
 from helpers import login_and_password_generator
 
 # Запускаем приложение в Chuome.
-@pytest.fixture(scope = "function")
+@pytest.fixture(scope = "session")
 def driver():
     options = Options()
     brouser = webdriver.Chrome(options)
@@ -19,11 +22,14 @@ def driver():
     brouser.quit()
 
 
-@pytest.fixture(scope = "function")
-def registration(driver, ):
+@pytest.fixture(scope = "session")
+def registration(driver):
     
     Name ='Aleksandr'
-    Email, Password = login_and_password_generator()
+    reg_data = login_and_password_generator().copy()
+    Email = reg_data["login"]
+    Password = reg_data["password"]
+    
     driver.get(Test_url.page_registration)
     # Заполняем поля на форме регистрации.
     # Поле редактирования имени на форме регистрации.
@@ -37,5 +43,8 @@ def registration(driver, ):
     driver.find_element(*Locators.PASSWORD_EDIT).send_keys(Password)
 
     # Жмём кнопочку зарегистрироваться.
-    driver.find_element(*Locators.BUTTON_REGISTER).click()
+    wait = WebDriverWait(driver, 20)
+    wait.until(EC.element_to_be_clickable(Locators.BUTTON_REGISTER)).click()
+    #time.sleep(10)
+    #driver.find_element(*Locators.BUTTON_REGISTER).click()
     return {Email, Password}

@@ -14,7 +14,7 @@ class Test_login():
         # Ожидаем, что перешли на форму входа.
         wait = WebDriverWait(driver, 10)
         element = wait.until(EC.element_to_be_clickable(Locators.EMAIL_EDIT_LOGIN))
-        time.sleep(2)
+        time.sleep(20)
         # Заполняем форму входа в аккаунт.
         #driver.find_element(*Locators.EMAIL_EDIT_LOGIN).clear()
         driver.find_element(*Locators.EMAIL_EDIT_LOGIN).send_keys(login)
@@ -46,7 +46,8 @@ class Test_login():
       
     # Вход через кнопку в форме регистрации.
     def test_login_via_the_button_in_the_registration_form(self, driver, registration):
-        login, password = registration
+        login = registration[login]
+        password = registration[password]
         driver.find_element(*Locators.BUTTON_LOG_IN_TO_YOUR_ACCOUNT).click() # Нажимаем кнопку "Войти в аккаунт".
         
         # Ожидаем форму входа.
