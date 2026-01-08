@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options 
 from curl import Test_url
 from locators import Locators
+from helpers import login_and_password_generator
 
 # Запускаем приложение в Chuome.
 @pytest.fixture(scope = "function")
@@ -17,26 +18,12 @@ def driver():
     yield brouser
     brouser.quit()
 
-# Генерируем уникальные почту и пароль для регистрации.
-@pytest.fixture(scope = "function")
-def login_and_password_generator():
-   
-    # Использует UUID для уникальности.
-    uid = str(uuid.uuid4().hex[:3])  # Короткие UUID
-    login = f"37_Aleksandr_{uid}@yandex.ru"
-    
-    # Пароль: смесь букв, цифр и 2 спецсимвола
-    chars = string.ascii_letters + string.digits
-    password = ''.join(random.choices(chars, k=6))
-    password += random.choice("!@#") + random.choice("$%&")
-   
-    return {"login": login, "password": password}
 
 @pytest.fixture(scope = "function")
-def registration(driver, login_and_password_generator):
+def registration(driver, ):
     
     Name ='Aleksandr'
-    Email, Password = login_and_password_generator
+    Email, Password = login_and_password_generator()
     driver.get(Test_url.page_registration)
     # Заполняем поля на форме регистрации.
     # Поле редактирования имени на форме регистрации.
@@ -51,5 +38,4 @@ def registration(driver, login_and_password_generator):
 
     # Жмём кнопочку зарегистрироваться.
     driver.find_element(*Locators.BUTTON_REGISTER).click()
-    driver.quit()
     return {Email, Password}

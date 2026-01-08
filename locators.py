@@ -68,3 +68,12 @@ class Locators:
 
 # Кнопка "Вспомнили пароль? Войти"
     BUTTON_REM_PASS_IN = (By.XPATH, "//*[@id='root']/div/main/div/div/p/a")
+
+# Флюорисцентная булка.
+    ROLS = (By.XPATH, "//*[@id='root']/div/main/section[1]/div[2]/h2[1]")  
+
+# Соусы.
+    SOUSES = (By.XPATH, "//*[@id='root']/div/main/section[1]/div[2]/h2[2]")
+
+# Начинки"
+    TOPPINGS = (By.XPATH, "//*[@id='root']/div/main/section[1]/div[2]/h2[3]")

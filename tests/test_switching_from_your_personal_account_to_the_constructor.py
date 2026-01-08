@@ -36,6 +36,7 @@ class Test_switching_from_our_personal_account_to_the_constructor():
        
         wait = WebDriverWait(driver, 10)
         wait.until(EC.element_to_be_clickable(Locators.BUTTON_CONSTR)).click()
+        # Ожидаем переход на главную форму.
         except_url = Test_url.main_site
         current_url = driver.current_url
         assert except_url == current_url
@@ -66,7 +67,7 @@ class Test_switching_from_our_personal_account_to_the_constructor():
         # Ожидаем переход на главную форму.
         wait = WebDriverWait(driver, 10)
         wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
-        
+
         except_url = Test_url.main_site
         current_url = driver.current_url
         assert except_url == current_url
