@@ -17,7 +17,7 @@ from helpers import login_and_password_generator
 def driver():
     options = Options()
     brouser = webdriver.Chrome(options)
-    brouser.get("https://stellarburgers.education-services.ru/")
+    brouser.get(Test_url.main_site)
     yield brouser
     brouser.quit()
 
@@ -41,10 +41,9 @@ def registration(driver):
     # Поле редактирования пароля на форме регистрации.
     driver.find_element(*Locators.PASSWORD_EDIT).clear()
     driver.find_element(*Locators.PASSWORD_EDIT).send_keys(Password)
-
+    time.sleep(2)
     # Жмём кнопочку зарегистрироваться.
     wait = WebDriverWait(driver, 20)
     wait.until(EC.element_to_be_clickable(Locators.BUTTON_REGISTER)).click()
-    #time.sleep(10)
-    #driver.find_element(*Locators.BUTTON_REGISTER).click()
-    return {Email, Password}
+    return {"login": Email, "password": Password}
+    

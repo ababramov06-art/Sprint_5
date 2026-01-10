@@ -63,7 +63,7 @@ class Test_switching_from_our_personal_account_to_the_constructor():
         wait.until(EC.element_to_be_clickable(Locators.BUTTON_IN_AFTER_REG)).click()
         # Жмём логотип формы.
         wait = WebDriverWait(driver, 10)
-        wait.until(EC.element_to_be_clickable(Locators.FORM_LOGO)).click()              
+        wait.until(EC.element_to_be_clickable(Locators.LOGO_LOCATOR)).click()              
         # Ожидаем переход на главную форму.
         wait = WebDriverWait(driver, 10)
         wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
