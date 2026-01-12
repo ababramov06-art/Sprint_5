@@ -40,7 +40,7 @@ def registration(driver):
     # Поле редактирования пароля на форме регистрации.
     driver.find_element(*Locators.PASSWORD_EDIT).clear()
     driver.find_element(*Locators.PASSWORD_EDIT).send_keys(Password)
-    time.sleep(2)
+  
     # Жмём кнопочку зарегистрироваться.
     wait = WebDriverWait(driver, 20)
     wait.until(EC.element_to_be_clickable(Locators.BUTTON_REGISTER)).click()

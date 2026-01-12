@@ -59,7 +59,7 @@ class Test_login():
       
         driver.find_element(*Locators.EMAIL_EDIT_LOGIN).clear()
         driver.find_element(*Locators.EMAIL_EDIT_LOGIN).send_keys(login)
-        time.sleep(2)
+        
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).clear()
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).send_keys(password)
         

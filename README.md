@@ -17,9 +17,9 @@ test_switching_from_your_personal_account_to_the_constructor.py - тестиро
 test_log_out_of_your_account.py - тестирование выхода из аккаунта.
     test_log_out_of_your_account() - тестирование выхода из аккаунта по кнопке "Выйти" в личном кабинете.
 test_constructor.py - тестирование раздела "Конструктор".
-    test_rolls() - тестирование перехода в раздел "Булки".
-    test_sauces() - тестирование перехода в раздел "Соусы".
-    test_toppings() - тестирование перехода в раздел "Начинки".
+    test_navigation_to_buns() - тестирование перехода в раздел "Булки".
+    test_navigation_to_sauces() - тестирование перехода в раздел "Соусы".
+    test_navigation_to_fillings() - тестирование перехода в раздел "Начинки".
 
 
 

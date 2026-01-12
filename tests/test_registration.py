@@ -25,7 +25,7 @@ class TestRegistration:
         driver.find_element(*Locators.PASSWORD_EDIT).clear()
         driver.find_element(*Locators.PASSWORD_EDIT).send_keys(password)
         # Нажимаем кнопку "Зарегистрироваться."
-       #driver.find_element(*Locators.BUTTON_REGISTER).click()
+        #driver.find_element(*Locators.BUTTON_REGISTER).click()
         wait = WebDriverWait(driver, 10)
         element = wait.until(EC.element_to_be_clickable(Locators.BUTTON_REGISTER)).click()
         # Ожидаем форму входа.

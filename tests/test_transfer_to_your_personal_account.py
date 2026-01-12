@@ -26,7 +26,7 @@ class Test_transfer_to_your_personal_account():
         # Нажимаем кнопку "Зарегистрироваться."
         driver.find_element(*Locators.BUTTON_REGISTER).click()
         # Ожидаем, что перешли на форму входа.
-        time.sleep(1)
+       
         # Заполняем форму входа в аккаунт.
         driver.find_element(*Locators.EMAIL_EDIT_LOGIN).clear()
         driver.find_element(*Locators.EMAIL_EDIT_LOGIN).send_keys(login)
