@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from helpers import login_and_password_generator
-import time
+
 
 class Test_transfer_to_your_personal_account():
     

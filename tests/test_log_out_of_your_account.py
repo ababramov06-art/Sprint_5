@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from locators import Locators
 from curl import Test_url
 from helpers import login_and_password_generator
-import time
+
 class Test_log_out_of_your_account():
     # проверка выхода из личного аккаута.
     def test_log_out_of_your_account(self, driver):

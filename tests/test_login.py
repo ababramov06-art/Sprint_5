@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from locators import Locators
 from curl import Test_url
 from helpers import login_and_password_generator
-import time
+
 # Тесты на вход.
 class Test_login():
 
