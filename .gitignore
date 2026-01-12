@@ -1,4 +1,5 @@
 __pycache__/
+__pycache__/conftest.cpython-311-pytest-9.0.2.pyc
 .pytest_cache/
 *.pyc
 *.pyo
@@ -103,4 +104,3 @@ target/
 profile_default/
 ipython_config.py
 proba.py
-__pycache__/conftest.cpython-311-pytest-9.0.2.pyc
