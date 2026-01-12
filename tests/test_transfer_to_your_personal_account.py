@@ -36,6 +36,6 @@ class Test_transfer_to_your_personal_account():
         # Ожидаем переход на главную форму.
        
         driver.find_element(*Locators.BUTTON_PERSONAL_ACCOUNT).click()
-        wait = WebDriverWait(driver, 10)
-        wait.until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT)).click()        
+        
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT)).click()        
         assert Test_url.page_personal_account == driver.current_url

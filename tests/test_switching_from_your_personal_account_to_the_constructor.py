@@ -34,8 +34,8 @@ class Test_switching_from_our_personal_account_to_the_constructor():
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).send_keys(password)
         driver.find_element(*Locators.LOGIN_ENTER).click()
        
-        wait = WebDriverWait(driver, 10)
-        wait.until(EC.element_to_be_clickable(Locators.BUTTON_CONSTR)).click()
+        
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Locators.BUTTON_CONSTR)).click()
         # Ожидаем переход на главную форму.
         except_url = Test_url.main_site
         current_url = driver.current_url
@@ -59,14 +59,14 @@ class Test_switching_from_our_personal_account_to_the_constructor():
         # Нажимаем кнопку "Зарегистрироваться."
         driver.find_element(*Locators.BUTTON_REGISTER).click()
         # Ожидаем, что перешли на форму входа.
-        wait = WebDriverWait(driver, 10)
-        wait.until(EC.element_to_be_clickable(Locators.BUTTON_IN_AFTER_REG)).click()
+        
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Locators.BUTTON_IN_AFTER_REG)).click()
         # Жмём логотип формы.
-        wait = WebDriverWait(driver, 10)
-        wait.until(EC.element_to_be_clickable(Locators.LOGO_LOCATOR)).click()              
+        
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Locators.LOGO_LOCATOR)).click()              
         # Ожидаем переход на главную форму.
-        wait = WebDriverWait(driver, 10)
-        wait.until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
+        
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Locators.PLACE_AN_ORDER))
 
         except_url = Test_url.main_site
         current_url = driver.current_url

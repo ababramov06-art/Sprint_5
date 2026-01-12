@@ -42,7 +42,7 @@ def registration(driver):
     driver.find_element(*Locators.PASSWORD_EDIT).send_keys(Password)
   
     # Жмём кнопочку зарегистрироваться.
-    wait = WebDriverWait(driver, 20)
-    wait.until(EC.element_to_be_clickable(Locators.BUTTON_REGISTER)).click()
+    
+    WebDriverWait(driver, 20).until(EC.element_to_be_clickable(Locators.BUTTON_REGISTER)).click()
     return {"login": Email, "password": Password}
     

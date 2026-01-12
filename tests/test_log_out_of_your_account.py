@@ -26,11 +26,11 @@ class Test_log_out_of_your_account():
         # Ожидаем переход на главную форму.
         driver.get(Test_url.main_site)
         # войти в личный кабинет.
-        wait = WebDriverWait(driver, 20)
-        wait.until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT)).click()
+        
+        WebDriverWait(driver, 20).until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT)).click()
         # Ожидаем форму личного кабинета.
-        wait = WebDriverWait(driver, 10)
-        wait.until(EC.element_to_be_clickable(Locators.BUTTON_REG))
+        
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Locators.BUTTON_REG))
         # Проверяем форму личного кабинета.
         current_url = driver.current_url
         expected_url = Test_url.page_log_in_to_your_account
