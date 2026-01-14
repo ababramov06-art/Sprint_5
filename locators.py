@@ -134,3 +134,5 @@ class Locators:
 
     WRONG_PASS_MESSAGE_LOCATOR = (
         By.XPATH, "//p[contains(text(), 'Некорректный пароль')]")
+
+    BUTTON_LOG_AFTER = (By.XPATH, "//*[@id='root']/div/main/div/form/button")

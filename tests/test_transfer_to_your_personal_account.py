@@ -26,16 +26,18 @@ class Test_transfer_to_your_personal_account():
         # Нажимаем кнопку "Зарегистрироваться."
         driver.find_element(*Locators.BUTTON_REGISTER).click()
         # Ожидаем, что перешли на форму входа.
-       
+        #WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Locators.LOGIN_BUTTON_LOCATOR))
         # Заполняем форму входа в аккаунт.
         driver.find_element(*Locators.EMAIL_EDIT_LOGIN).clear()
         driver.find_element(*Locators.EMAIL_EDIT_LOGIN).send_keys(login)
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).clear()
         driver.find_element(*Locators.PASSWORD_EDIT_LOGIN).send_keys(password)
+        
+        #WebDriverWait(driver, 50).until(EC.element_to_be_clickable(Locators.LOGIN_BUTTON_LOCATOR)).click()
         driver.find_element(*Locators.LOGIN_ENTER).click()
         # Ожидаем переход на главную форму.
        
-        driver.find_element(*Locators.BUTTON_PERSONAL_ACCOUNT).click()
+        #driver.find_element(*Locators.BUTTON_PERSONAL_ACCOUNT).click()
         
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT)).click()        
         assert Test_url.page_personal_account == driver.current_url
